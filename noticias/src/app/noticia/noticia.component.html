@@ -1,0 +1,21 @@
+<mat-card>
+    <form (submit)="onAdicionarNoticia(noticiaForm)" #noticiaForm="ngForm">
+        <mat-form-field>
+            <input type="text" required matInput placeholder="tituloInput" name="titulo" ngModel #titulo="ngModel" />
+            <mat-error *ngIf="titulo.invalid">Digite um título válido.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" required matInput placeholder="textoInput" name="texto" ngModel #texto="ngModel" />
+            <mat-error *ngIf="titulo.invalid">Digite um corpo da notícia válido.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" required matInput placeholder="autorInput" name="autor" ngModel #autor="ngModel" />
+            <mat-error *ngIf="titulo.invalid">Digite um autor válido.</mat-error>
+        </mat-form-field>
+
+        <button color="primary" mat-raised-button>Publicar Notícia</button>
+
+    </form>
+</mat-card>
