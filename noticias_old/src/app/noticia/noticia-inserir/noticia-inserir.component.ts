@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NoticiaService } from './noticia.service';
+import { NoticiasApiService } from 'src/app/service/noticias-api.service';
 
 @Component({
-  selector: 'app-noticia',
-  templateUrl: './noticia.component.html',
-  styleUrls: ['./noticia.component.css']
+  selector: 'app-noticia-inserir',
+  templateUrl: './noticia-inserir.component.html',
+  styleUrls: ['./noticia-inserir.component.css']
 })
-export class NoticiaComponent {
+export class NoticiaInserirComponent {
 
-  constructor(public noticiaService: NoticiaService) {}
+  constructor(public noticiaService: NoticiasApiService) {}
 
   onAdicionarNoticia(form: NgForm) {
     if (form.invalid) {
       return;
     }
+
     this.noticiaService.adicionarNoticia(
       form.value.titulo,
       form.value.autor,
