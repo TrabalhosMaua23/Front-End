@@ -15,10 +15,10 @@ export class NoticiaComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getNoticias().subscribe((result) => {
-      // console.log(result.noticias);
-      console.log(result.articles);
+      console.log(result);
+      //console.log(result.articles);
             
-      this.noticiasLista = result.articles;
+      this.noticiasLista = result.noticias;
       
     })
   }

@@ -3,12 +3,10 @@
     <h4>Notícias do mundo real</h4>
     <div class="row-lg-3 mt-3 mb-3">
       <mat-expansion-panel *ngFor="let noticia of noticiasLista" class="row-lg-3 mt-3 mb-3">
-        <mat-expansion-panel-header class="noticia">{{noticia.title}}</mat-expansion-panel-header>
+        <mat-expansion-panel-header class="noticia">{{noticia.titulo}}</mat-expansion-panel-header>
         
-        <hr>
-        
-        <p>{{noticia.description}}</p>
-        <p class="autor">Autor: {{noticia.author}} - {{noticia.publishedAt}}</p>
+        <p>{{noticia.texto}}</p>
+        <p class="autor">Autor: {{noticia.autor}} - {{noticia.data}}</p>
 
         <!-- <h6 class="mt-3 mb-3">Notícia por {{noticia.author}} - {{noticia.publishedAt}}</h6>  -->
         <!-- <p>{{noticia.content}}</p> -->
