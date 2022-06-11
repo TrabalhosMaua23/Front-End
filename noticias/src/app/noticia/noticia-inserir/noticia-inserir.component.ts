@@ -13,8 +13,9 @@ export class NoticiaInserirComponent {
 
   onAdicionarNoticia(form: NgForm) {
     if (form.invalid) {
-      return;
+      console.log("deu pau");
     }
+    console.log("teste")
 
     this.noticiaService.adicionarNoticia(
       form.value.titulo,

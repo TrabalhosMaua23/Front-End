@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NoticiaModel } from '../noticia/noticia.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,13 @@ export class NoticiasApiService {
   }
 
   adicionarNoticia(titulo, autor, texto) {
-    throw new Error('Method not implemented.');
+    const noticia: NoticiaModel = {autor: autor,
+      data: this.data_atual,
+      texto: texto,
+      titulo: titulo
+    };
+    this._http.post<{mensagem: string}>(this.noticiasApi,noticia).subscribe((dados) => console.log(dados))
+    // console.log("teste 2")
   }
 
 }
