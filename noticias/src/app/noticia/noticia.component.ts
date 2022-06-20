@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { NoticiasApiService } from '../service/noticias-api.service';
 
 
@@ -21,5 +22,6 @@ export class NoticiaComponent implements OnInit {
       this.noticiasLista = result.noticias;
       
     })
+    
   }
 }

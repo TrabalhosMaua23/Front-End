@@ -17,7 +17,14 @@ export class NoticiasApiService {
   data_atual = new Date();
 
   getNoticias(): Observable<any> {
+    const noticiasObservable = new Observable(observer => {
+      setTimeout(() => {
+          observer.next(this.noticiasApi);
+      }, 1000);
+});
+    
     return this._http.get(this.noticiasApi)
+    
   }
 
   adicionarNoticia(titulo, autor, texto) {
